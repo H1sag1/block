@@ -8,14 +8,25 @@ public class Ball : MonoBehaviour
     public float minSpeed = 5f;  //速さの最小値
     public float maxSpeed = 10f; //速さの最大値
 
+
     Rigidbody rb;
     Transform tf;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.velocity = new Vector3(speed, speed, 0f);
+        BallStart();
+    }
+
+    public void BallStart()
+    {
+        gameObject.transform.position = new Vector3(2, 1, 0);
+        rb = gameObject.GetComponent<Rigidbody>();
+        rb.velocity = Vector3.zero;
+        rb.AddForce((-transform.up + transform.right) * speed, ForceMode.VelocityChange);
+
+        //rb = GetComponent<Rigidbody>();
+        //rb.velocity = new Vector3(speed + 20, -speed, 0f);
         tf = transform;
     }
 
@@ -39,12 +50,13 @@ public class Ball : MonoBehaviour
             // プレイヤーから見たボールの方向を計算
             Vector3 direction = (ballPos - playerPos).normalized;
             // 速度を変更
-            rb.velocity = direction * speed;
+            rb.AddForce((-transform.up + transform.right) * 0.5f, ForceMode.VelocityChange);
         }
         // ステージ床と接触したら
         if (collision.gameObject.CompareTag("Down"))
         {
             Object.Destroy(gameObject);
+            BallStart();
         }
     }
 }
