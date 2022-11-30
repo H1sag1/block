@@ -37,10 +37,15 @@ public class Ball : MonoBehaviour
     void Update()
     {
         MaxMinSpeed();
+        YSpeed();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        GameManager gameManager;
+        GameObject obj = GameObject.Find("GameManager");
+        gameManager = obj.GetComponent<GameManager>();
+
         // プレイヤーと接触したら
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -70,6 +75,8 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.CompareTag("Down"))
         {
             Object.Destroy(gameObject);
+            gameManager.lifeNum--;
+            Debug.Log(gameManager.lifeNum);
             BallStart();
         }
     }
@@ -81,5 +88,15 @@ public class Ball : MonoBehaviour
         float clampedSpeed = Mathf.Clamp(velocity.magnitude, minSpeed, maxSpeed);
         // 速度を変更
         rb.velocity = velocity.normalized * clampedSpeed;
+    }
+
+    void YSpeed()
+    {
+        if (Mathf.Abs(rb.velocity.y) < 4)
+        {
+            float vec = rb.velocity.y > 0 ? 4 : -4;
+            rb.velocity += new Vector3(0, vec, 0);
+            Debug.Log("できた");
+        }
     }
 }
