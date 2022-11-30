@@ -12,9 +12,13 @@ public class Ball : MonoBehaviour
     public Rigidbody rb;
     Transform tf;
 
+    private AudioSource HitAudio;
+    public AudioClip BallSE;
+    public AudioClip BlockSE;
     // Start is called before the first frame update
     void Start()
     {
+        HitAudio = gameObject.AddComponent<AudioSource>();
         BallStart();
     }
 
@@ -48,6 +52,19 @@ public class Ball : MonoBehaviour
             Vector3 direction = (ballPos - playerPos).normalized;
             // 速度を変更
             rb.AddForce((-transform.up + transform.right) * 0.5f, ForceMode.VelocityChange);
+        }
+        //プレイヤーまたは壁に接触したら
+        if(collision.gameObject.name == "Player" ||
+           collision.gameObject.name == "Up"     ||
+           collision.gameObject.name == "Left"   ||
+           collision.gameObject.name == "Right")
+        {
+            HitAudio.PlayOneShot(BallSE);
+        }
+        //ブロックに接触したら
+        if(collision.gameObject.name == "block")
+        {
+            HitAudio.PlayOneShot(BlockSE);
         }
         // ステージ床と接触したら
         if (collision.gameObject.CompareTag("Down"))
