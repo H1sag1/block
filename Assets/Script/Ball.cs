@@ -67,7 +67,7 @@ public class Ball : MonoBehaviour
             HitAudio.PlayOneShot(BallSE);
         }
         //ÉuÉçÉbÉNÇ…ê⁄êGÇµÇΩÇÁ
-        if(collision.gameObject.name == "block")
+        if(collision.gameObject.name == "block(Clone)")
         {
             HitAudio.PlayOneShot(BlockSE);
         }

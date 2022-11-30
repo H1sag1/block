@@ -18,8 +18,6 @@ public class Block : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        GameObject obj = (GameObject)Resources.Load("Item");
-        Instantiate(obj, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        Object.Destroy(this.gameObject);
     }
 }
