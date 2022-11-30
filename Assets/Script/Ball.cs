@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public float speed = 5f;     //移動速度
-    public float minSpeed = 5f;  //速さの最小値
-    public float maxSpeed = 10f; //速さの最大値
+    public float Speed = 15f;     //移動速度
+    public float minSpeed = 15f;  //速さの最小値
+    public float maxSpeed = 30f; //速さの最大値
 
 
-    Rigidbody rb;
+    public Rigidbody rb;
     Transform tf;
 
     // Start is called before the first frame update
@@ -20,22 +20,19 @@ public class Ball : MonoBehaviour
 
     public void BallStart()
     {
-        gameObject.transform.position = new Vector3(2, 1, 0);
-        rb = gameObject.GetComponent<Rigidbody>();
-        rb.velocity = Vector3.zero;
-        rb.AddForce((-transform.up + transform.right) * speed, ForceMode.VelocityChange);
+        rb = GetComponent<Rigidbody>();
+        tf = transform;
+        rb.AddForce(-Speed, -Speed, 0, ForceMode.VelocityChange);
 
         //rb = GetComponent<Rigidbody>();
         //rb.velocity = new Vector3(speed + 20, -speed, 0f);
-        tf = transform;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 velocity = rb.velocity;
-        float clampedSpeed = Mathf.Clamp(velocity.magnitude, minSpeed, maxSpeed);
-        rb.velocity = velocity.normalized * clampedSpeed;
+        MaxMinSpeed();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -58,5 +55,14 @@ public class Ball : MonoBehaviour
             Object.Destroy(gameObject);
             BallStart();
         }
+    }
+    void MaxMinSpeed() //ボールの速度幅を決める
+    {
+        // 現在の速度を取得
+        Vector3 velocity = rb.velocity;
+        // 速さを計算
+        float clampedSpeed = Mathf.Clamp(velocity.magnitude, minSpeed, maxSpeed);
+        // 速度を変更
+        rb.velocity = velocity.normalized * clampedSpeed;
     }
 }
