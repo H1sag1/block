@@ -8,7 +8,6 @@ public class Ball : MonoBehaviour
     public float minSpeed = 5f;  //速さの最小値
     public float maxSpeed = 10f; //速さの最大値
 
-
     Rigidbody rb;
     Transform tf;
 
@@ -40,6 +39,10 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        GameManager gameManager;
+        GameObject obj = GameObject.Find("GameManager");
+        gameManager = obj.GetComponent<GameManager>();
+
         // プレイヤーと接触したら
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -56,7 +59,8 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.CompareTag("Down"))
         {
             Object.Destroy(gameObject);
-            BallStart();
+            gameManager.lifeNum--;
+            //BallStart();
         }
     }
 }
