@@ -9,9 +9,6 @@ public class GameManager : MonoBehaviour
     public GameObject Blocks;
     public GameObject block;
     public GameObject obj;
-    public GameObject ballPrefab;
-
-    public bool ballExistence = false; //É{Å[ÉãÇÃóLñ≥
 
     // Start is called before the first frame update
     void Start()
@@ -22,15 +19,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (ballExistence == false)
-            {
-                GameObject ball = GameObject.Instantiate(ballPrefab);
-                ball.transform.position = new Vector3(0, 5, 0);
-                ballExistence = true;
-            }
-        }
+        
     }
     private void OnBlock()
     {
