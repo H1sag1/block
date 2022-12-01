@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class ChanegeScene : MonoBehaviour
 {
     int scenenum;
+
+    public GameObject arrow;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,10 @@ public class ChanegeScene : MonoBehaviour
             case 1:
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    StartCoroutine("LoadScene2");
+                    if (arrow.transform.localPosition.x == -470 && arrow.transform.localPosition.y == 60)
+                    {
+                        StartCoroutine("LoadScene2");
+                    }
                 }
                 break;
         }
