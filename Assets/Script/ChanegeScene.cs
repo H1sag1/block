@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ChanegeScene : MonoBehaviour
 {
+    int scenenum;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,15 +15,33 @@ public class ChanegeScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        scenenum = SceneManager.GetActiveScene().buildIndex;
+        switch(scenenum)
         {
-            StartCoroutine("LoadScene");
+            case 0:
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    StartCoroutine("LoadScene");
+                }
+                break;
+            case 1:
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    StartCoroutine("LoadScene2");
+                }
+                break;
         }
+       
     }
 
     IEnumerator LoadScene()
     {
         yield return new WaitForSeconds(0.1f);
-        SceneManager.LoadScene("MainGame");      
+        SceneManager.LoadScene("StageSelect");      
+    }
+    IEnumerator LoadScene2()
+    {
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadScene("MainGame");
     }
 }
