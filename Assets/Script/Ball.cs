@@ -55,8 +55,9 @@ public class Ball : MonoBehaviour
             Vector3 ballPos = tf.position;
             // プレイヤーから見たボールの方向を計算
             Vector3 direction = (ballPos - playerPos).normalized;
+            float speed = rb.velocity.magnitude;
             // 速度を変更
-            rb.AddForce((-transform.up + transform.right) * 0.5f, ForceMode.VelocityChange);
+            rb.velocity = direction * speed;
         }
         //プレイヤーまたは壁に接触したら
         if(collision.gameObject.name == "Player" ||
