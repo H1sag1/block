@@ -23,5 +23,9 @@ public class Item : MonoBehaviour
             //ƒpƒhƒ‹ÚG‚µ‚½‚çÁ‚·
             Object.Destroy(this.gameObject);
         }
+        if (collision.gameObject.CompareTag("Down"))
+        {
+            Object.Destroy(gameObject);
+        }
     }
 }
