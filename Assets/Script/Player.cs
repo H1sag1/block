@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 5f; //移動速度
+    public float speed = 5.0f; //移動速度
     Rigidbody rb;
 
     public Vector3 scale = new Vector3(5, 1, 1); //バーの大きさ
