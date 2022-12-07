@@ -127,8 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a82c36761da504bb2f63d63412c81b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
-  minSpeed: 5
+  Speed: 8
+  minSpeed: 8
   maxSpeed: 25
   rb: {fileID: 0}
   BallSE: {fileID: 8300000, guid: ea97c9a58b568c24391e32ae634acaa8, type: 3}
