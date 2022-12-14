@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 859901098}
   - component: {fileID: 859901097}
   m_Layer: 0
-  m_Name: SE Manager
+  m_Name: Audio Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -570,6 +570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpaceSE: {fileID: 8300000, guid: b5687c5b6e0190d469131aa0044b252b, type: 3}
   ArrowSE: {fileID: 8300000, guid: b8d6ca9c0913fe446bb45138e2a80224, type: 3}
+  BGM: {fileID: 8300000, guid: a95b79eec35067149ab2c349bb162f09, type: 3}
 --- !u!4 &859901098
 Transform:
   m_ObjectHideFlags: 0

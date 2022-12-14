@@ -11,10 +11,14 @@ public class StageSelect : MonoBehaviour
 
     static int iconXNum = 5;
     static int stageMax = 10;
+
+   
+    
     // Start is called before the first frame update
     void Start()
     {
         Transform transform = this.transform;
+       
     }
 
     // Update is called once per frame
