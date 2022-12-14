@@ -10,7 +10,7 @@ public class Rank : MonoBehaviour
 
     float time = 10.5f;
     int deathNum = 2;
-    int total = 0;//合計スコア
+    //int total = 0;//合計スコア
     string alphabet = "S";//スコアアルファベット換算
 
     // Start is called before the first frame update
