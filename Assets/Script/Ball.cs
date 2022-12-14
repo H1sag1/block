@@ -76,9 +76,9 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.CompareTag("Down"))
         {
             Object.Destroy(gameObject);
-            gameManager.lifeNum--;
+            gameManager.deadNum++;
             gameManager.ballexistence = false;
-            Debug.Log(gameManager.lifeNum);
+            Debug.Log(gameManager.deadNum);
             BallStart();
         }
     }
