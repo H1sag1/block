@@ -35,6 +35,12 @@ public class ChanegeScene : MonoBehaviour
                     }
                 }
                 break;
+            case 2:
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                        StartCoroutine("LoadScene3");
+                }
+                break;
             case 3:
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
@@ -54,5 +60,10 @@ public class ChanegeScene : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene("MainGame");
+    }
+    IEnumerator LoadScene3()
+    {
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadScene("Rezalt");
     }
 }
