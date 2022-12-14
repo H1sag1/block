@@ -35,6 +35,12 @@ public class ChanegeScene : MonoBehaviour
                     }
                 }
                 break;
+            case 3:
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    StartCoroutine("LoadScene");
+                }
+                break;
         }
 
     }
