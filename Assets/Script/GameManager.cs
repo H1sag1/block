@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour
         {
             time += Time.deltaTime;
         }
-        Debug.Log(time);
     }
     private void OnBlock()
     {

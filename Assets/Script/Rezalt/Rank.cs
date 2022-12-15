@@ -50,7 +50,7 @@ public class Rank : MonoBehaviour
             total += 70;
         }else
         {
-            total += 70 - (int)time - 60;
+            total += 70 - ((int)time - 60);
         }
 
         if (deathNum <= 0)

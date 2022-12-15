@@ -22,12 +22,10 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             rb.velocity = new Vector3(speed, 0, 0);
-            Debug.Log("right");
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             rb.velocity = new Vector3(-speed, 0, 0);
-            Debug.Log("left");
         }
 
         if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
