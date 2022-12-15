@@ -13,6 +13,8 @@ public class Rank : MonoBehaviour
     int total = 0;//合計スコア
     string alphabet = "S";//スコアアルファベット換算
 
+    float count = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +27,20 @@ public class Rank : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TimeScore.text = "TIME " + time.ToString("F2");
-        DeathScore.text ="DEATH " +  deathNum.ToString("F0");
-        AllScore.text =  "RANK " + alphabet;
-
-        Debug.Log(total);
+        if (count >= 1f)
+        {
+            TimeScore.text = "TIME " + time.ToString("F2");
+        }
+        if (count >= 2f)
+        {
+            DeathScore.text = "DEATH " + deathNum.ToString("F0");
+        }
+        if (count >= 3f)
+        {
+            AllScore.text = "RANK " + alphabet;
+        }
+        
+        count += Time.deltaTime;
     }
 
  void totalscore()
