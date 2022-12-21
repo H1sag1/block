@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -7177711065887991077}
   - component: {fileID: -840285302841522176}
   m_Layer: 0
-  m_Name: BallSpeedUp
+  m_Name: ItemBallSpeedUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
