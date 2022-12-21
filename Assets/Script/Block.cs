@@ -22,5 +22,6 @@ public class Block : MonoBehaviour
         Object.Destroy(this.gameObject);
         number = Random.Range(0, itemPrefabs.Length);@//‘qŒÉ‚Ì’†‚©‚çƒ‰ƒ“ƒ_ƒ€‚Å
         Instantiate(itemPrefabs[number], this.transform.position, Quaternion.identity);
+        itemPrefabs[number].transform.Rotate(90f, 0, 0);
     }
 }
