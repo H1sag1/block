@@ -99,16 +99,7 @@ public class Ball : MonoBehaviour
         {
             float vec = rb.velocity.y > 0 ? 4 : -4;
             rb.velocity += new Vector3(0, vec, 0);
-            Debug.Log("y‚Å‚«‚½");
-        }
-    }
-    void XSpeed()
-    {
-        if (Mathf.Abs(rb.velocity.x) < 4)
-        {
-            float vec = rb.velocity.x > 0 ? 4 : -4;
-            rb.velocity += new Vector3(vec, 0, 0);
-            Debug.Log("x‚Å‚«‚½");
+            Debug.Log("‚Å‚«‚½");
         }
     }
 }
