@@ -450,7 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf53f15ff920c684aa9f0047ab5bb136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrow: {fileID: 870718513}
+  arrow: {fileID: 870718515}
 --- !u!114 &529998248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 859901098}
   - component: {fileID: 859901097}
   m_Layer: 0
-  m_Name: SE Manager
+  m_Name: Audio Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -570,6 +570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpaceSE: {fileID: 8300000, guid: b5687c5b6e0190d469131aa0044b252b, type: 3}
   ArrowSE: {fileID: 8300000, guid: b8d6ca9c0913fe446bb45138e2a80224, type: 3}
+  BGM: {fileID: 8300000, guid: a95b79eec35067149ab2c349bb162f09, type: 3}
 --- !u!4 &859901098
 Transform:
   m_ObjectHideFlags: 0
@@ -607,6 +608,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7310ca86e25194184f4ac999df329e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttons:
+  - {fileID: 529439786}
+  - {fileID: 703932989}
+  - {fileID: 1738992377}
+  - {fileID: 1923918426}
+  - {fileID: 1761334983}
+  - {fileID: 1548896753}
+  - {fileID: 47380919}
+  - {fileID: 1487428782}
+  - {fileID: 890253733}
+  - {fileID: 900558434}
 --- !u!1 &890253733
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,7 +644,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890253733}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -642,7 +654,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 190, y: -80}
+  m_AnchoredPosition: {x: 190, y: -79.99999}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &890253735

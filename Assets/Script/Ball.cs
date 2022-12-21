@@ -20,6 +20,7 @@ public class Ball : MonoBehaviour
     {
         HitAudio = gameObject.AddComponent<AudioSource>();
         BallStart();
+        HitAudio.volume = 0.7f;
     }
 
     public void BallStart()
@@ -68,7 +69,7 @@ public class Ball : MonoBehaviour
             HitAudio.PlayOneShot(BallSE);
         }
         //ÉuÉçÉbÉNÇ…ê⁄êGÇµÇΩÇÁ
-        if(collision.gameObject.name == "block(Clone)")
+        if(collision.gameObject.name == "blockRed(Clone)")
         {
             HitAudio.PlayOneShot(BlockSE);
         }
@@ -76,9 +77,9 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.CompareTag("Down"))
         {
             Object.Destroy(gameObject);
-            gameManager.lifeNum--;
+            gameManager.deadNum++;
             gameManager.ballexistence = false;
-            Debug.Log(gameManager.lifeNum);
+            Debug.Log(gameManager.deadNum);
             BallStart();
         }
     }

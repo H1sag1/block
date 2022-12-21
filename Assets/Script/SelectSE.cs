@@ -9,7 +9,8 @@ public class SelectSE : MonoBehaviour
     private AudioSource ArrowAudio;
     public AudioClip SpaceSE;
     public AudioClip ArrowSE;
-
+    private AudioSource BGMAudio;
+    public AudioClip BGM;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,10 @@ public class SelectSE : MonoBehaviour
         ArrowAudio = gameObject.AddComponent<AudioSource>();
         ArrowAudio.clip = ArrowSE;
         ArrowAudio.loop = false;
+        BGMAudio = gameObject.AddComponent<AudioSource>();
+        BGMAudio.clip = BGM;
+        BGMAudio.loop = true;
+        BGMAudio.Play();
     }
 
     // Update is called once per frame

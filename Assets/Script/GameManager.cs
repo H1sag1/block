@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int lifeNum = 3; //ライフの数
-
     public GameObject Blocks;
     public GameObject block;
     public GameObject obj;
     public GameObject ballPrefab;
 
-    public bool ballexistence = false;
+    public bool ballexistence = false;  //ボールの有無
+    public int deadNum = 3; //ライフの数
 
+    public float time = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +30,11 @@ public class GameManager : MonoBehaviour
                 ball.transform.position = new Vector3(0, 5, 0);
                 ballexistence = true;
             }
+        }
+        
+        if (ballexistence == true)
+        {
+            time += Time.deltaTime;
         }
     }
     private void OnBlock()
@@ -68,4 +73,6 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+ 
 }

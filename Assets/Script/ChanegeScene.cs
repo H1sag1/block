@@ -6,47 +6,70 @@ using UnityEngine.SceneManagement;
 public class ChanegeScene : MonoBehaviour
 {
     int scenenum;
-
-    public GameObject arrow;
+    Transform myTransform;
+    public StageSelect arrow;
     // Start is called before the first frame update
     void Start()
     {
-        
+        scenenum = SceneManager.GetActiveScene().buildIndex;
+        if (scenenum == 2)
+        {
+            GameObject block = GameObject.Find("Blocks");
+            myTransform = block.transform;
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        scenenum = SceneManager.GetActiveScene().buildIndex;
-        switch(scenenum)
+        
+        switch (scenenum)
         {
             case 0:
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    StartCoroutine("LoadScene");
+                    StartCoroutine("StageSelectScene");
                 }
                 break;
             case 1:
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    if (arrow.transform.localPosition.x == -470 && arrow.transform.localPosition.y == 60)
+                    if (arrow.GetStageID() == 0)
                     {
-                        StartCoroutine("LoadScene2");
+                        StartCoroutine("MainGameScene");
                     }
                 }
                 break;
+            case 2:
+                if (myTransform.childCount == 0)
+                {
+                    StartCoroutine("RezaltScene");
+                }
+                break;
+            case 3:
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    StartCoroutine("StageSelectScene");
+                }
+                break;
         }
-       
+
     }
 
-    IEnumerator LoadScene()
+    IEnumerator StageSelectScene()
     {
         yield return new WaitForSeconds(0.1f);
-        SceneManager.LoadScene("StageSelect");      
+        SceneManager.LoadScene("StageSelect");
     }
-    IEnumerator LoadScene2()
+    IEnumerator MainGameScene()
     {
         yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene("MainGame");
+    }
+    IEnumerator RezaltScene()
+    {
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadScene("Rezalt");
     }
 }

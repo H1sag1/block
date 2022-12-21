@@ -1596,7 +1596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadetime: 3
   SpaceSE: {fileID: 8300000, guid: b5687c5b6e0190d469131aa0044b252b, type: 3}
-  BGMSE: {fileID: 8300000, guid: 7d5d728b38244f04d9437fef9c1b8df5, type: 3}
+  BGMSE: {fileID: 8300000, guid: 90eae78e8ce85a849b5b0ca11b2de641, type: 3}
 --- !u!1 &1163052456 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1142537351301059935, guid: 94f1744438f1b224eb408853562d4a29, type: 3}
