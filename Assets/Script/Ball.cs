@@ -69,7 +69,7 @@ public class Ball : MonoBehaviour
             HitAudio.PlayOneShot(BallSE);
         }
         //ÉuÉçÉbÉNÇ…ê⁄êGÇµÇΩÇÁ
-        if(collision.gameObject.name == "blockRed(Clone)")
+        if(collision.gameObject.name == "blockRed(Clone)" || collision.gameObject.name == "blockBlue(Clone)" || collision.gameObject.name == "blockGreen(Clone)")
         {
             HitAudio.PlayOneShot(BlockSE);
         }
