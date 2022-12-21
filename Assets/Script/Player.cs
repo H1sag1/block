@@ -19,7 +19,21 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector3(Input.GetAxis("Horizontal") * speed, 0f, 0f);
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            rb.velocity = new Vector3(speed, 0, 0);
+            Debug.Log("right");
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            rb.velocity = new Vector3(-speed, 0, 0);
+            Debug.Log("left");
+        }
+
+        if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            rb.velocity = new Vector3(0, 0, 0);
+        }
         ScaleChange();
     }
     private void ScaleChange()//バーの大きさを元のサイズに
