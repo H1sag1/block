@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 8
   minSpeed: 8
-  maxSpeed: 25
+  maxSpeed: 22
   rb: {fileID: 0}
   BallSE: {fileID: 8300000, guid: 8456464fb55e577488f36b47f1333c1f, type: 3}
   BlockSE: {fileID: 8300000, guid: 54aadea4cb3899945a72be9e0396f31d, type: 3}
