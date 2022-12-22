@@ -12,7 +12,7 @@ public class ChanegeScene : MonoBehaviour
     void Start()
     {
         scenenum = SceneManager.GetActiveScene().buildIndex;
-        if (scenenum == 3 || scenenum == 4)
+        if (scenenum >= 1 && scenenum <= 12)
         {
             GameObject block = GameObject.Find("Blocks");
             myTransform = block.transform;
@@ -32,22 +32,15 @@ public class ChanegeScene : MonoBehaviour
                 }
                 break;
             case 1:
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (myTransform.childCount == 0)
                 {
-                    if (arrow.GetStageID() == 0)
-                    {
-                        StartCoroutine("MainGameScene");
-                    }
-                    if (arrow.GetStageID() == 2)
-                    {
-                        StartCoroutine("Stage3Scene");
-                    }
+                    StartCoroutine("RezaltScene");
                 }
                 break;
             case 2:
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (myTransform.childCount == 0)
                 {
-                    StartCoroutine("StageSelectScene");
+                    StartCoroutine("RezaltScene");
                 }
                 break;
             case 3:
@@ -60,6 +53,61 @@ public class ChanegeScene : MonoBehaviour
                 if (myTransform.childCount == 0)
                 {
                     StartCoroutine("RezaltScene");
+                }
+                break;
+            case 5:
+                if (myTransform.childCount == 0)
+                {
+                    StartCoroutine("RezaltScene");
+                }
+                break;
+            case 6:
+                if (myTransform.childCount == 0)
+                {
+                    StartCoroutine("RezaltScene");
+                }
+                break;
+            case 7:
+                if (myTransform.childCount == 0)
+                {
+                    StartCoroutine("RezaltScene");
+                }
+                break;
+            case 8:
+                if (myTransform.childCount == 0)
+                {
+                    StartCoroutine("RezaltScene");
+                }
+                break;
+            case 9:
+                if (myTransform.childCount == 0)
+                {
+                    StartCoroutine("RezaltScene");
+                }
+                break;
+            case 10:
+                if (myTransform.childCount == 0)
+                {
+                    StartCoroutine("RezaltScene");
+                }
+                break;
+            case 11:
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    if (arrow.GetStageID() == 0)
+                    {
+                        StartCoroutine("MainGameScene");
+                    }
+                    if (arrow.GetStageID() == 2)
+                    {
+                        StartCoroutine("Stage3Scene");
+                    }
+                }
+                break;
+            case 12:
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    StartCoroutine("StageSelectScene");
                 }
                 break;
 

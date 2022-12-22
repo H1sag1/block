@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     }
     private void OnBlock()
     {
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < 1; i++)
         {
             obj = (GameObject)Instantiate(BlockBlue, new Vector3(-7.5f + i * 2.5f, 13, 0), Quaternion.identity);
             obj.transform.parent = Blocks.transform;
@@ -50,22 +50,22 @@ public class GameManager : MonoBehaviour
             //Blocks.transform.position = new Vector3(-7.5f + i * 2.5f, 13, 0);
             //Blocks.transform.parent = transform;
         }
-        for (int i = 0; i < 7; i++)
-        {
-            obj = (GameObject)Instantiate(BlockGreen, new Vector3(-7.5f + i * 2.5f, 11.5f, 0), Quaternion.identity);
-            obj.transform.parent = Blocks.transform;
-            //itemNum++;
-            //GameObject blockG = GameObject.Instantiate(BlockGreen);
-            //blockG.transform.position = new Vector3(-7.5f + i * 2.5f, 11.5f, 0);
-        }
-        for (int i = 0; i < 7; i++)
-        {
-            obj = (GameObject)Instantiate(BlockRed, new Vector3(-7.5f + i * 2.5f, 10, 0), Quaternion.identity);
-            obj.transform.parent = Blocks.transform;
-            //itemNum++;
-            //GameObject blockY = GameObject.Instantiate(BlockYellow);
-            //blockY.transform.position = new Vector3(-7.5f + i * 2.5f, 10, 0);
-        }
+        //for (int i = 0; i < 7; i++)
+        //{
+        //    obj = (GameObject)Instantiate(BlockGreen, new Vector3(-7.5f + i * 2.5f, 11.5f, 0), Quaternion.identity);
+        //    obj.transform.parent = Blocks.transform;
+        //    //itemNum++;
+        //    //GameObject blockG = GameObject.Instantiate(BlockGreen);
+        //    //blockG.transform.position = new Vector3(-7.5f + i * 2.5f, 11.5f, 0);
+        //}
+        //for (int i = 0; i < 7; i++)
+        //{
+        //    obj = (GameObject)Instantiate(BlockRed, new Vector3(-7.5f + i * 2.5f, 10, 0), Quaternion.identity);
+        //    obj.transform.parent = Blocks.transform;
+        //    //itemNum++;
+        //    //GameObject blockY = GameObject.Instantiate(BlockYellow);
+        //    //blockY.transform.position = new Vector3(-7.5f + i * 2.5f, 10, 0);
+        //}
         //for (int i = 0; i < 7; i++)
         //{
         //    for (int j = 0; j < 3; j++)
