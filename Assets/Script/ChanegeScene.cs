@@ -96,7 +96,7 @@ public class ChanegeScene : MonoBehaviour
                 {
                     if (arrow.GetStageID() == 0)
                     {
-                        StartCoroutine("MainGameScene");
+                        StartCoroutine("Stage1Scene");
                     }
                     if (arrow.GetStageID() == 2)
                     {
@@ -120,10 +120,10 @@ public class ChanegeScene : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene("StageSelect");
     }
-    IEnumerator MainGameScene()
+    IEnumerator Stage1Scene()
     {
         yield return new WaitForSeconds(0.1f);
-        SceneManager.LoadScene("MainGame");
+        SceneManager.LoadScene("Stage1");
     }
     IEnumerator Stage3Scene()
     {
