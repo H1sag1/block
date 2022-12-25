@@ -77,10 +77,9 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.CompareTag("Down"))
         {
             Object.Destroy(gameObject);
-            gameManager.deadNum++;
-            gameManager.ballexistence = false;
+            gameManager.Balldeath();
             Debug.Log(gameManager.deadNum);
-            BallStart();
+            //BallStart();
         }
     }
     void MaxMinSpeed() //ƒ{[ƒ‹‚Ì‘¬“x•‚ğŒˆ‚ß‚é

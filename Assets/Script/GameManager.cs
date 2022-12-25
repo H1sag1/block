@@ -9,10 +9,10 @@ public class GameManager : MonoBehaviour
     public GameObject BlockGreen;
     public GameObject BlockBlue;
     public GameObject obj;
+    public GameObject Balls;
     public GameObject ballPrefab;
-
     public bool ballexistence = false;  //ボールの有無
-    public int deadNum = 3; //ライフの数
+    public int deadNum = 0; //ライフの数
 
     public float time = 0;
     // Start is called before the first frame update
@@ -29,11 +29,10 @@ public class GameManager : MonoBehaviour
             if (ballexistence == false)
             {
                 GameObject ball = GameObject.Instantiate(ballPrefab);
-                ball.transform.position = new Vector3(0, 5, 0);
+                ball.transform.parent = Balls.transform;
                 ballexistence = true;
             }
         }
-        
         if (ballexistence == true)
         {
             time += Time.deltaTime;
@@ -41,7 +40,7 @@ public class GameManager : MonoBehaviour
     }
     private void OnBlock()
     {
-        for (int i = 0; i < 1; i++)
+        for (int i = 0; i < 7; i++)
         {
             obj = (GameObject)Instantiate(BlockBlue, new Vector3(-7.5f + i * 2.5f, 13, 0), Quaternion.identity);
             obj.transform.parent = Blocks.transform;
@@ -50,14 +49,14 @@ public class GameManager : MonoBehaviour
             //Blocks.transform.position = new Vector3(-7.5f + i * 2.5f, 13, 0);
             //Blocks.transform.parent = transform;
         }
-        //for (int i = 0; i < 7; i++)
-        //{
-        //    obj = (GameObject)Instantiate(BlockGreen, new Vector3(-7.5f + i * 2.5f, 11.5f, 0), Quaternion.identity);
-        //    obj.transform.parent = Blocks.transform;
-        //    //itemNum++;
-        //    //GameObject blockG = GameObject.Instantiate(BlockGreen);
-        //    //blockG.transform.position = new Vector3(-7.5f + i * 2.5f, 11.5f, 0);
-        //}
+        for (int i = 0; i < 7; i++)
+        {
+            obj = (GameObject)Instantiate(BlockGreen, new Vector3(-7.5f + i * 2.5f, 11.5f, 0), Quaternion.identity);
+            obj.transform.parent = Blocks.transform;
+            //itemNum++;
+            //GameObject blockG = GameObject.Instantiate(BlockGreen);
+            //blockG.transform.position = new Vector3(-7.5f + i * 2.5f, 11.5f, 0);
+        }
         //for (int i = 0; i < 7; i++)
         //{
         //    obj = (GameObject)Instantiate(BlockRed, new Vector3(-7.5f + i * 2.5f, 10, 0), Quaternion.identity);
@@ -75,6 +74,13 @@ public class GameManager : MonoBehaviour
         //    }
         //}
     }
-
+    public void Balldeath()
+    {
+        if (Balls.transform.childCount == 1)
+        {
+            deadNum++;
+            ballexistence = false;
+        }
+    }
 
 }
