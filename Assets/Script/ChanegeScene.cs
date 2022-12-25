@@ -12,7 +12,7 @@ public class ChanegeScene : MonoBehaviour
     void Start()
     {
         scenenum = SceneManager.GetActiveScene().buildIndex;
-        if (scenenum >= 1 && scenenum <= 12)
+        if (scenenum >= 1 && scenenum <= 10)
         {
             GameObject block = GameObject.Find("Blocks");
             myTransform = block.transform;
