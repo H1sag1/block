@@ -98,9 +98,41 @@ public class ChanegeScene : MonoBehaviour
                     {
                         StartCoroutine("Stage1Scene");
                     }
+                    if (arrow.GetStageID() == 1)
+                    {
+                        StartCoroutine("Stage2Scene");
+                    }
                     if (arrow.GetStageID() == 2)
                     {
                         StartCoroutine("Stage3Scene");
+                    }
+                    if (arrow.GetStageID() == 3)
+                    {
+                        StartCoroutine("Stage4Scene");
+                    }
+                    if (arrow.GetStageID() == 4)
+                    {
+                        StartCoroutine("Stage5Scene");
+                    }
+                    if (arrow.GetStageID() == 5)
+                    {
+                        StartCoroutine("Stage6Scene");
+                    }
+                    if (arrow.GetStageID() == 6)
+                    {
+                        StartCoroutine("Stage7Scene");
+                    }
+                    if (arrow.GetStageID() == 7)
+                    {
+                        StartCoroutine("Stage8Scene");
+                    }
+                    if (arrow.GetStageID() == 8)
+                    {
+                        StartCoroutine("Stage9Scene");
+                    }
+                    if (arrow.GetStageID() == 9)
+                    {
+                        StartCoroutine("Stage10Scene");
                     }
                 }
                 break;
@@ -125,10 +157,50 @@ public class ChanegeScene : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene("Stage1");
     }
+    IEnumerator Stage2Scene()
+    {
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadScene("Stage2");
+    }
     IEnumerator Stage3Scene()
     {
         yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene("Stage3");
+    }
+    IEnumerator Stage4Scene()
+    {
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadScene("Stage4");
+    }
+    IEnumerator Stage5Scene()
+    {
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadScene("Stage5");
+    }
+    IEnumerator Stage6Scene()
+    {
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadScene("Stage6");
+    }
+    IEnumerator Stage7Scene()
+    {
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadScene("Stage7");
+    }
+    IEnumerator Stage8Scene()
+    {
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadScene("Stage8");
+    }
+    IEnumerator Stage9Scene()
+    {
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadScene("Stage9");
+    }
+    IEnumerator Stage10Scene()
+    {
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadScene("Stage10");
     }
     IEnumerator RezaltScene()
     {
