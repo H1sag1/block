@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject obj;
     public GameObject Balls;
     public GameObject ballPrefab;
-    public bool ballexistence = false;  //ボールの有無
+    //public bool ballexistence = false;  //ボールの有無
     public int deadNum = 0; //ライフの数
 
     public float time = 0;
@@ -26,14 +26,14 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (ballexistence == false)
+            if (Balls.transform.childCount == 0)
             {
                 GameObject ball = GameObject.Instantiate(ballPrefab);
                 ball.transform.parent = Balls.transform;
-                ballexistence = true;
+                //ballexistence = false;
             }
         }
-        if (ballexistence == true)
+        if (Balls.transform.childCount >= 1)
         {
             time += Time.deltaTime;
         }
@@ -76,10 +76,10 @@ public class GameManager : MonoBehaviour
     }
     public void Balldeath()
     {
-        if (Balls.transform.childCount == 1)
+        if (Balls.transform.childCount >= 1)
         {
             deadNum++;
-            ballexistence = false;
+            //ballexistence = false;
         }
     }
 
