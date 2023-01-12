@@ -79,7 +79,7 @@ public class Ball : MonoBehaviour
             Object.Destroy(gameObject);
             gameManager.Balldeath();
             Debug.Log(gameManager.deadNum);
-            gameManager.ballexistence = false;
+            //gameManager.ballexistence = false;
             //BallStart();
         }
     }
