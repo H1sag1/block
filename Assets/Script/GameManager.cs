@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
     public GameObject obj;
     public GameObject Balls;
     public GameObject ballPrefab;
+
+    int scenenum;
     //public bool ballexistence = false;  //ボールの有無
     public int deadNum = 0; //ライフの数
 
@@ -18,6 +21,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scenenum = SceneManager.GetActiveScene().buildIndex;
         OnBlock();
     }
 
@@ -40,40 +44,106 @@ public class GameManager : MonoBehaviour
     }
     private void OnBlock()
     {
-        for (int i = 0; i < 7; i++)
+        if (scenenum == 1)
         {
-            obj = (GameObject)Instantiate(BlockBlue, new Vector3(-7.5f + i * 2.5f, 13, 0), Quaternion.identity);
-            obj.transform.parent = Blocks.transform;
-            //itemNum++;
-            //GameObject Blocks = (GameObject)Instantiate(BlockBrue, transform.position, Quaternion.identity);
-            //Blocks.transform.position = new Vector3(-7.5f + i * 2.5f, 13, 0);
-            //Blocks.transform.parent = transform;
+            for (int i = 0; i < 7; i++)
+            {
+                obj = (GameObject)Instantiate(BlockBlue, new Vector3(-7.5f + i * 2.5f, 13, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;
+                //itemNum++;
+                //GameObject Blocks = (GameObject)Instantiate(BlockBrue, transform.position, Quaternion.identity);
+                //Blocks.transform.position = new Vector3(-7.5f + i * 2.5f, 13, 0);
+                //Blocks.transform.parent = transform;
+            }
+            for (int i = 0; i < 7; i++)
+            {
+                obj = (GameObject)Instantiate(BlockGreen, new Vector3(-7.5f + i * 2.5f, 11.5f, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;
+                //itemNum++;
+                //GameObject blockG = GameObject.Instantiate(BlockGreen);
+                //blockG.transform.position = new Vector3(-7.5f + i * 2.5f, 11.5f, 0);
+            }
+            for (int i = 0; i < 7; i++)
+            {
+                obj = (GameObject)Instantiate(BlockRed, new Vector3(-7.5f + i * 2.5f, 10, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;
+                //itemNum++;
+                //GameObject blockY = GameObject.Instantiate(BlockYellow);
+                //blockY.transform.position = new Vector3(-7.5f + i * 2.5f, 10, 0);
+            }
         }
-        for (int i = 0; i < 7; i++)
+        if (scenenum == 2) //ステージ２のブロックはいちい
         {
-            obj = (GameObject)Instantiate(BlockGreen, new Vector3(-7.5f + i * 2.5f, 11.5f, 0), Quaternion.identity);
-            obj.transform.parent = Blocks.transform;
-            //itemNum++;
-            //GameObject blockG = GameObject.Instantiate(BlockGreen);
-            //blockG.transform.position = new Vector3(-7.5f + i * 2.5f, 11.5f, 0);
+            for (int i = 0; i < 6; i++)
+            {
+                obj = (GameObject)Instantiate(BlockRed, new Vector3(-6.0f + i * 2.5f, 14.5f, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;
+            }
+            for (int i = 0; i < 7; i++)
+            {
+                obj = (GameObject)Instantiate(BlockBlue, new Vector3(-7.5f + i * 2.5f, 13, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;
+            }
+            for (int i = 0; i < 7; i++)
+            {
+                obj = (GameObject)Instantiate(BlockGreen, new Vector3(-7.5f + i * 2.5f, 11.5f, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;  
+            }
+            for (int i = 0; i < 6; i++)
+            {
+                obj = (GameObject)Instantiate(BlockRed, new Vector3(-6.0f + i * 2.5f, 10, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;
+            }
         }
-        for (int i = 0; i < 7; i++)
+        if (scenenum == 3)
         {
-            obj = (GameObject)Instantiate(BlockRed, new Vector3(-7.5f + i * 2.5f, 10, 0), Quaternion.identity);
-            obj.transform.parent = Blocks.transform;
-            //itemNum++;
-            //GameObject blockY = GameObject.Instantiate(BlockYellow);
-            //blockY.transform.position = new Vector3(-7.5f + i * 2.5f, 10, 0);
+            
         }
-        //for (int i = 0; i < 7; i++)
-        //{
-        //    for (int j = 0; j < 3; j++)
-        //    {
-        //        obj = (GameObject)Instantiate(block, new Vector3(-7.5f + i * 2.5f, 16f - j * 1.5f, 0), Quaternion.identity);
-        //        obj.transform.parent = Blocks.transform;
-        //    }
-        //}
-    }
+        if (scenenum == 4)
+        {
+
+        }
+
+        if (scenenum == 5)
+        { 
+            for (int i = 0; i < 10; i++)
+            {
+                obj = (GameObject)Instantiate(BlockBlue, new Vector3(-15.5f + i * 2.5f, 13, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                obj = (GameObject)Instantiate(BlockGreen, new Vector3(-7.5f + i * 2.5f, 11.5f, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;
+            }
+            for (int i = 0; i < 7; i++)
+            {
+                obj = (GameObject)Instantiate(BlockRed, new Vector3(-6.0f + i * 2.5f, 10, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;
+            }
+        }
+        if (scenenum == 6)
+        {
+
+        }
+        if (scenenum == 7)
+        {
+
+        }
+        if (scenenum == 8)
+        {
+
+        }
+        if (scenenum == 9)
+        {
+
+        }
+        if (scenenum == 10)
+        {
+
+        }
+   
+}
     public void Balldeath()
     {
         if (Balls.transform.childCount == 1)
