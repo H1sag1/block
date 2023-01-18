@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
     }
     public void Balldeath()
     {
-        if (Balls.transform.childCount >= 1)
+        if (Balls.transform.childCount == 1)
         {
             deadNum++;
             //ballexistence = false;
