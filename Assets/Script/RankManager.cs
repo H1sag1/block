@@ -6,7 +6,7 @@ public class RankManager : MonoBehaviour
 {
     //スコアを次のシーンに持っていく
     public static float time = 0;
-    public static int Death = 0;
+    public static int Life = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +21,6 @@ public class RankManager : MonoBehaviour
         gameManager = obj.GetComponent<GameManager>();
 
         time = gameManager.time;
-        Death = gameManager.deadNum;
+        Life = gameManager.Life;
     }
 }

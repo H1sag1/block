@@ -12,12 +12,13 @@ public class GameManager : MonoBehaviour
     public GameObject obj;
     public GameObject Balls;
     public GameObject ballPrefab;
-
+    public GameObject gameOverUI;
     int scenenum;
     //public bool ballexistence = false;  //ボールの有無
-    public int deadNum = 0; //ライフの数
+    public int Life = 3; //ライフの数
 
     public float time = 0;
+    bool GameOverflag = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,18 +29,23 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        IsGameover();
+        if (GameOverflag == false)
         {
-            if (Balls.transform.childCount == 0)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                GameObject ball = GameObject.Instantiate(ballPrefab);
-                ball.transform.parent = Balls.transform;
-                //ballexistence = false;
+                if (Balls.transform.childCount == 0)
+                {
+                    GameObject ball = GameObject.Instantiate(ballPrefab);
+                    ball.transform.parent = Balls.transform;
+                    //ballexistence = false;
+                }
             }
-        }
-        if (Balls.transform.childCount >= 1)
-        {
-            time += Time.deltaTime;
+            if (Balls.transform.childCount >= 1)
+            {
+                time += Time.deltaTime;
+            }
         }
     }
     private void OnBlock()
@@ -148,9 +154,27 @@ public class GameManager : MonoBehaviour
     {
         if (Balls.transform.childCount == 1)
         {
-            deadNum++;
+            Life--;
             //ballexistence = false;
         }
     }
-
+    public void IsGameover()
+    {
+        if(Life <= 0)
+        {
+            GameOverflag = true;
+        }
+        if(GameOverflag == true)
+        {
+            Invoke("showGameoverUI", 0.3f);
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
+    }
+    private void showGameoverUI()
+    {
+        gameOverUI.SetActive(true);
+    }
 }

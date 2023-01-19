@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2958973994154127109
+--- !u!1 &8634803056998533088
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3195531491495854511}
-  - component: {fileID: 5876191300241519913}
+  - component: {fileID: 8258570924242594122}
+  - component: {fileID: 1101398736075283916}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3195531491495854511
+--- !u!4 &8258570924242594122
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2958973994154127109}
+  m_GameObject: {fileID: 8634803056998533088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.08360016, y: 0.76387787, z: 0.5775757}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,13 +32,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5876191300241519913
+--- !u!114 &1101398736075283916
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2958973994154127109}
+  m_GameObject: {fileID: 8634803056998533088}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 284f6452b1a9edd4bb9449b1a6d60939, type: 3}
@@ -49,7 +49,8 @@ MonoBehaviour:
   BlockGreen: {fileID: 3235845235036160548, guid: fd18861a6719bc14c97ebeb9b9481fe6, type: 3}
   BlockBlue: {fileID: 4466294835468376463, guid: 372ed31a2d9e948469bdf2480b4edcd3, type: 3}
   obj: {fileID: 0}
+  Balls: {fileID: 0}
   ballPrefab: {fileID: 2225655167099372638, guid: 77d34d4562482df47bafee709f484a1e, type: 3}
-  ballexistence: 0
-  deadNum: 0
+  gameOverUI: {fileID: 0}
+  Life: 3
   time: 0

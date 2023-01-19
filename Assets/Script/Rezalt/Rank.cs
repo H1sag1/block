@@ -19,7 +19,7 @@ public class Rank : MonoBehaviour
     void Start()
     {
         time = RankManager.time;
-        deathNum = RankManager.Death;
+        deathNum = RankManager.Life;
         totalscore();
         Alfabet();
     }
