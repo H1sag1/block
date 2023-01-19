@@ -8,7 +8,11 @@ public class Player : MonoBehaviour
     Rigidbody rb;
 
     public Vector3 scale = new Vector3(5, 1, 1); //バーの大きさ
+    public Vector3 position;
     public float count = 10f;//アイテム効果時間
+
+    public float dis;
+    public GameObject Left;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +37,7 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector3(0, 0, 0);
         }
         ScaleChange();
+        NotPenetration();
     }
     private void ScaleChange()//バーの大きさを元のサイズに
     {
@@ -45,6 +50,26 @@ public class Player : MonoBehaviour
         if (count < 0)
         {
             scale = new Vector3(5, 1, 1);
+        }
+    }
+
+    private void NotPenetration() //めり込まない処理
+    {
+        position = gameObject.transform.position;
+        dis = transform.position.x - Left.transform.position.x;
+
+        if (scale.x == 7)
+        {
+            if (dis < 4)
+            {
+                position.x = -6.5f;
+                transform.position = position;
+            }
+            if (dis > 17)
+            {
+                position.x = 6.5f;
+                transform.position = position;
+            }
         }
     }
 }
