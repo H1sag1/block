@@ -277,6 +277,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257339292}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &385839195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 907070978648165335, guid: a87a23f310bdd1842b8c963dd231265e, type: 3}
+  m_PrefabInstance: {fileID: 1927694148}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &645639419
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,7 +891,8 @@ MonoBehaviour:
   obj: {fileID: 0}
   Balls: {fileID: 1860130966}
   ballPrefab: {fileID: 2225655167099372638, guid: 77d34d4562482df47bafee709f484a1e, type: 3}
-  deadNum: 0
+  gameOverUI: {fileID: 385839195}
+  Life: 3
   time: 0
 --- !u!4 &1208210142
 Transform:
@@ -1234,7 +1240,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1594757314
 MonoBehaviour:

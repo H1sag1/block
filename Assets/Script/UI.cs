@@ -7,13 +7,13 @@ using TMPro;
 public class UI : MonoBehaviour
 {
     TextMeshProUGUI timerText;
-    TextMeshProUGUI death;
+    TextMeshProUGUI Life;
     
     // Start is called before the first frame update
     void Start()
     {
         timerText = GetComponent<TextMeshProUGUI>();
-        death = GetComponent<TextMeshProUGUI>();
+        Life = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -27,9 +27,9 @@ public class UI : MonoBehaviour
         {
             timerText.text = "TIME : " + gameManager.time.ToString("F2");
         }
-        if (gameObject.name == "Death")
+        if (gameObject.name == "Life")
         {
-            death.text = "DEATH : " + gameManager.deadNum.ToString("");
+            Life.text = "LIFE : " + gameManager.Life.ToString("");
         }
        
     }
