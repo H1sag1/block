@@ -39,6 +39,7 @@ public class Ball : MonoBehaviour
     {
         MaxMinSpeed();
         YSpeed();
+        XSpeed();
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -97,7 +97,26 @@ public class GameManager : MonoBehaviour
         }
         if (scenenum == 3)
         {
-            
+            for (int i = 0; i < 7; i++)
+            {
+                obj = (GameObject)Instantiate(BlockRed, new Vector3(-7.5f + i * 2.5f, 14.5f, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;
+            }
+            for (int i = 0; i < 6; i++)
+            {
+                obj = (GameObject)Instantiate(BlockBlue, new Vector3(-6.5f + i * 2.5f, 13, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                obj = (GameObject)Instantiate(BlockGreen, new Vector3(-5.5f + i * 2.5f, 11.5f, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;
+            }
+            for (int i = 0; i < 4; i++)
+            {
+                obj = (GameObject)Instantiate(BlockRed, new Vector3(-4.5f + i * 2.5f, 10.0f, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;
+            }
         }
         if (scenenum == 4)
         {
@@ -106,19 +125,29 @@ public class GameManager : MonoBehaviour
 
         if (scenenum == 5)
         { 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 3; i++)
             {
-                obj = (GameObject)Instantiate(BlockBlue, new Vector3(-15.5f + i * 2.5f, 13, 0), Quaternion.identity);
+                obj = (GameObject)Instantiate(BlockBlue, new Vector3(-2.5f + i * 2.5f, 14.5f, 0), Quaternion.identity);
                 obj.transform.parent = Blocks.transform;
             }
             for (int i = 0; i < 5; i++)
             {
-                obj = (GameObject)Instantiate(BlockGreen, new Vector3(-7.5f + i * 2.5f, 11.5f, 0), Quaternion.identity);
+                obj = (GameObject)Instantiate(BlockGreen, new Vector3(-5.0f + i * 2.5f, 13, 0), Quaternion.identity);
                 obj.transform.parent = Blocks.transform;
             }
             for (int i = 0; i < 7; i++)
             {
-                obj = (GameObject)Instantiate(BlockRed, new Vector3(-6.0f + i * 2.5f, 10, 0), Quaternion.identity);
+                obj = (GameObject)Instantiate(BlockRed, new Vector3(-7.5f + i * 2.5f, 11.5f, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                obj = (GameObject)Instantiate(BlockGreen, new Vector3(-5.0f + i * 2.5f, 10.0f, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                obj = (GameObject)Instantiate(BlockBlue, new Vector3(-2.5f + i * 2.5f, 8.5f, 0), Quaternion.identity);
                 obj.transform.parent = Blocks.transform;
             }
         }
