@@ -126,7 +126,31 @@ public class GameManager : MonoBehaviour
         }
         if (scenenum == 4)
         {
-
+            for (int i = 0; i < 5; i++)
+            {
+                obj = (GameObject)Instantiate(BlockBlue, new Vector3(-2.5f + i * 2.5f, 14.5f, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;
+            }
+            for (int i = 0; i < 7; i++)
+            {
+                obj = (GameObject)Instantiate(BlockGreen, new Vector3(-5.0f + i * 2.5f, 13, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;
+            }
+            for (int i = 0; i < 9; i++)
+            {
+                obj = (GameObject)Instantiate(BlockRed, new Vector3(-7.5f + i * 2.5f, 11.5f, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;
+            }
+            for (int i = 0; i < 7; i++)
+            {
+                obj = (GameObject)Instantiate(BlockGreen, new Vector3(-5.0f + i * 2.5f, 10.0f, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                obj = (GameObject)Instantiate(BlockBlue, new Vector3(-2.5f + i * 2.5f, 8.5f, 0), Quaternion.identity);
+                obj.transform.parent = Blocks.transform;
+            }
         }
 
         if (scenenum == 5)
