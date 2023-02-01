@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.009763428, g: 0.051886365, b: 0.1522263, a: 1}
+  m_IndirectSpecularColor: {r: 0.009786322, g: 0.05188985, b: 0.15229288, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -262,7 +262,7 @@ MonoBehaviour:
   obj: {fileID: 0}
   Balls: {fileID: 2078027090}
   ballPrefab: {fileID: 2225655167099372638, guid: 77d34d4562482df47bafee709f484a1e, type: 3}
-  gameOverUI: {fileID: 0}
+  gameOverUI: {fileID: 2140008194}
   Life: 3
   time: 0
 --- !u!1 &705507993
@@ -636,6 +636,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2140008194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 274658890816135544, guid: 3b4888f901298d04b80e2424f812b635, type: 3}
+  m_PrefabInstance: {fileID: 715775408}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3233721178693024868
 PrefabInstance:
   m_ObjectHideFlags: 0
