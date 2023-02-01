@@ -5,11 +5,11 @@ using TMPro;
 public class Rank : MonoBehaviour
 {
     public TextMeshProUGUI TimeScore;
-    public TextMeshProUGUI DeathScore;
+    public TextMeshProUGUI LifeScore;
     public TextMeshProUGUI AllScore;
 
     float time;
-    int deathNum;
+    int Life;
     int total = 0;//合計スコア
     string alphabet = "S";//スコアアルファベット換算
 
@@ -19,7 +19,7 @@ public class Rank : MonoBehaviour
     void Start()
     {
         time = RankManager.time;
-        deathNum = RankManager.Death;
+        Life = RankManager.Life;
         totalscore();
         Alfabet();
     }
@@ -33,7 +33,7 @@ public class Rank : MonoBehaviour
         }
         if (count >= 2f)
         {
-            DeathScore.text = "DEATH " + deathNum.ToString("F0");
+            LifeScore.text = "LIFE " + Life.ToString("F0");
         }
         if (count >= 3f)
         {
@@ -52,19 +52,7 @@ public class Rank : MonoBehaviour
         {
             total += 70 - ((int)time - 60);
         }
-
-        if (deathNum <= 0)
-        {
-            total += 30;
-        }
-        else if (deathNum >= 1 && deathNum <= 6)
-        {
-            total += 30 - 5 * deathNum;
-        }
-        else
-        {
-            total += 0;
-        }
+        total += Life * 10;
     }
     void Alfabet()
     {

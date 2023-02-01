@@ -39,6 +39,7 @@ public class Ball : MonoBehaviour
     {
         MaxMinSpeed();
         YSpeed();
+        XSpeed();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -69,7 +70,7 @@ public class Ball : MonoBehaviour
             HitAudio.PlayOneShot(BallSE);
         }
         //ブロックに接触したら
-        if(collision.gameObject.name == "blockRed(Clone)")
+        if(collision.gameObject.name == "blockRed(Clone)" || collision.gameObject.name == "blockBlue(Clone)" || collision.gameObject.name == "blockGreen(Clone)")
         {
             HitAudio.PlayOneShot(BlockSE);
         }
@@ -77,10 +78,10 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.CompareTag("Down"))
         {
             Object.Destroy(gameObject);
-            gameManager.deadNum++;
-            gameManager.ballexistence = false;
-            Debug.Log(gameManager.deadNum);
-            BallStart();
+            gameManager.Balldeath();
+            Debug.Log(gameManager.Life);
+            //gameManager.ballexistence = false;
+            //BallStart();
         }
     }
     void MaxMinSpeed() //ボールの速度幅を決める
@@ -99,7 +100,14 @@ public class Ball : MonoBehaviour
         {
             float vec = rb.velocity.y > 0 ? 4 : -4;
             rb.velocity += new Vector3(0, vec, 0);
-            Debug.Log("できた");
+        }
+    }
+    void XSpeed()
+    {
+        if (Mathf.Abs(rb.velocity.x) < 4)
+        {
+            float vec = rb.velocity.x > 0 ? 4 : -4;
+            rb.velocity += new Vector3(vec, 0, 0);
         }
     }
 }

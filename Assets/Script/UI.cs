@@ -7,13 +7,15 @@ using TMPro;
 public class UI : MonoBehaviour
 {
     TextMeshProUGUI timerText;
-    TextMeshProUGUI death;
-    
+    TextMeshProUGUI Life;
+    TextMeshProUGUI PushSpace;
+
     // Start is called before the first frame update
     void Start()
     {
         timerText = GetComponent<TextMeshProUGUI>();
-        death = GetComponent<TextMeshProUGUI>();
+        Life = GetComponent<TextMeshProUGUI>();
+        PushSpace = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -27,9 +29,20 @@ public class UI : MonoBehaviour
         {
             timerText.text = "TIME : " + gameManager.time.ToString("F2");
         }
-        if (gameObject.name == "Death")
+        if (gameObject.name == "Life")
         {
-            death.text = "DEATH : " + gameManager.deadNum.ToString("");
+            Life.text = "LIFE : " + gameManager.Life.ToString("");
+        }
+        if (gameObject.name == "Push")
+        {
+            if (gameManager.Balls.transform.childCount == 0 && gameManager.GameOverflag == false)
+            {
+                PushSpace.enabled = true;
+            }
+            else
+            {
+                PushSpace.enabled = false;
+            }
         }
        
     }
