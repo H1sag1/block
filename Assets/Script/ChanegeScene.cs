@@ -144,7 +144,10 @@ public class ChanegeScene : MonoBehaviour
                 break;
 
         }
-
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            SceneManager.LoadScene("Rezalt");
+        }
     }
 
     IEnumerator StageSelectScene()
