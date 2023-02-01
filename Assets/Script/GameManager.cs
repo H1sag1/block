@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public int Life = 3; //ƒ‰ƒCƒt‚Ì”
 
     public float time = 0;
-    public bool GameOverflag = false;
+    bool GameOverflag = false;
     // Start is called before the first frame update
     void Start()
     {
