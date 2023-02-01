@@ -12,7 +12,7 @@ public class ChanegeScene : MonoBehaviour
     void Start()
     {
         scenenum = SceneManager.GetActiveScene().buildIndex;
-        if (scenenum >= 1 && scenenum <= 10)
+        if (scenenum >= 1 && scenenum <= 5)
         {
             GameObject block = GameObject.Find("Blocks");
             myTransform = block.transform;
@@ -62,33 +62,33 @@ public class ChanegeScene : MonoBehaviour
                 }
                 break;
             case 6:
-                if (myTransform.childCount == 0)
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    StartCoroutine("RezaltScene");
+                    StartCoroutine("StageSelectScene");
                 }
                 break;
             case 7:
-                if (myTransform.childCount == 0)
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    StartCoroutine("RezaltScene");
+                    StartCoroutine("StageSelectScene");
                 }
                 break;
             case 8:
-                if (myTransform.childCount == 0)
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    StartCoroutine("RezaltScene");
+                    StartCoroutine("StageSelectScene");
                 }
                 break;
             case 9:
-                if (myTransform.childCount == 0)
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    StartCoroutine("RezaltScene");
+                    StartCoroutine("StageSelectScene");
                 }
                 break;
             case 10:
-                if (myTransform.childCount == 0)
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    StartCoroutine("RezaltScene");
+                    StartCoroutine("StageSelectScene");
                 }
                 break;
             case 11:
