@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.47209984, g: 0.47081292, b: 0.4666769, a: 1}
+  m_IndirectSpecularColor: {r: 0.4660946, g: 0.46579224, b: 0.46188897, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -682,9 +682,10 @@ MonoBehaviour:
   obj: {fileID: 0}
   Balls: {fileID: 1681490013}
   ballPrefab: {fileID: 2225655167099372638, guid: 77d34d4562482df47bafee709f484a1e, type: 3}
-  gameOverUI: {fileID: 0}
+  gameOverUI: {fileID: 1170779215}
   Life: 3
   time: 0
+  GameOverflag: 0
 --- !u!1 &879295650 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3906617332777427194, guid: 6eb8ccfa82f7f484ebfe2bdfcf9f3df5, type: 3}
@@ -888,6 +889,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eb8ccfa82f7f484ebfe2bdfcf9f3df5, type: 3}
+--- !u!1 &1170779215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 274658890816135544, guid: 3b4888f901298d04b80e2424f812b635, type: 3}
+  m_PrefabInstance: {fileID: 884150141}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1190378511
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,6 +1027,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7715036003963993964, guid: 94c21a71ac635f247af76c2c36de6b1c, type: 3}
   m_PrefabInstance: {fileID: 729363753}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1917689793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 274658889661823955, guid: 3b4888f901298d04b80e2424f812b635, type: 3}
+  m_PrefabInstance: {fileID: 884150141}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1917689795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917689793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ddb29b86c913b429a2293d7e7cac6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1001 &2029183817
 PrefabInstance:
   m_ObjectHideFlags: 0

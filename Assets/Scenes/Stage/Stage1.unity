@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.009763428, g: 0.051886365, b: 0.1522263, a: 1}
+  m_IndirectSpecularColor: {r: 0.009786322, g: 0.05188985, b: 0.15229288, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -262,9 +262,10 @@ MonoBehaviour:
   obj: {fileID: 0}
   Balls: {fileID: 2078027090}
   ballPrefab: {fileID: 2225655167099372638, guid: 77d34d4562482df47bafee709f484a1e, type: 3}
-  gameOverUI: {fileID: 0}
+  gameOverUI: {fileID: 2024738979}
   Life: 3
   time: 0
+  GameOverflag: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,6 +555,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrow: {fileID: 0}
+--- !u!1 &1019512161 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 274658889661823955, guid: 3b4888f901298d04b80e2424f812b635, type: 3}
+  m_PrefabInstance: {fileID: 715775408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1019512163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019512161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ddb29b86c913b429a2293d7e7cac6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &1039391583 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3906617332777427194, guid: 6eb8ccfa82f7f484ebfe2bdfcf9f3df5, type: 3}
@@ -692,6 +711,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2024738979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 274658890816135544, guid: 3b4888f901298d04b80e2424f812b635, type: 3}
+  m_PrefabInstance: {fileID: 715775408}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2078027090 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7715036003963993964, guid: 94c21a71ac635f247af76c2c36de6b1c, type: 3}
