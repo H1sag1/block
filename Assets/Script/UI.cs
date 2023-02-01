@@ -35,7 +35,7 @@ public class UI : MonoBehaviour
         }
         if (gameObject.name == "Push")
         {
-            if (gameManager.Balls.transform.childCount == 0)
+            if (gameManager.Balls.transform.childCount == 0 && gameManager.GameOverflag == false)
             {
                 PushSpace.enabled = true;
             }
