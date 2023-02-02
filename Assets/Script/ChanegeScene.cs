@@ -23,6 +23,12 @@ public class ChanegeScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+            Debug.Log("èIóπ");
+        }
+
         switch (scenenum)
         {
             case 0:
